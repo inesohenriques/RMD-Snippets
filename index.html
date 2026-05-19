@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Card Directory</title>
+  <title>RDM Snippets</title>
 
   <style>
     * {
@@ -144,7 +144,7 @@
 <body>
 
   <nav>
-    <h1>Card Directory</h1>
+    <h1>RDM Snippets</h1>
 
     <div>
       <a href="index.html">Home</a>
@@ -153,8 +153,8 @@
   </nav>
 
   <section class="hero">
-    <h2>Explore Cards</h2>
-    <p>Search and filter cards, then click them to open external links.</p>
+    <h2>Explore SNIPPETS</h2>
+    <p>Do you have a quick question about Research Data Management and FAIR? Search and filter through the snippets.</p>
   </section>
 
   <section class="controls">
@@ -162,20 +162,56 @@
 
     <select id="filter">
       <option value="all">All Categories</option>
-      <option value="tech">Tech</option>
-      <option value="design">Design</option>
-      <option value="business">Business</option>
+      <option value="tech">Plan</option>
+      <option value="design">Collect</option>
+      <option value="business">Process</option>
+       <option value="business">Analyse</option>
+       <option value="business">Analyse</option>
+       <option value="business">Preserve</option>
+       <option value="business">Share</option>
+       <option value="business">Reuse</option>
     </select>
   </section>
 
   <section class="cards" id="cardsContainer">
 
-    <a class="card" data-category="tech" href="https://example.com" target="_blank">
-      <div class="number">101</div>
-      <h3>Tech Project</h3>
+   <div class="flip-card" data-category="tech">
+
+  <div class="flip-card-inner">
+
+    <!-- FRONT -->
+    <div class="flip-card-front">
+      <div class="number">SNIP001</div>
+
+      <h3>Does my data fall into GDPR?</h3>
+
       <div class="tag">Tech</div>
-      <div class="open">Click to open →</div>
-    </a>
+
+      <div class="open">
+        Hover to learn more →
+      </div>
+    </div>
+
+    <!-- BACK -->
+    <div class="flip-card-back">
+
+      <h3>GDPR Information</h3>
+
+      <p>
+        Learn whether your company or project
+        falls under GDPR regulations and data
+        privacy requirements.
+      </p>
+
+      <a href="https://example.com" target="_blank">
+        Open Article
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
 
     <a class="card" data-category="design" href="https://example.com" target="_blank">
       <div class="number">202</div>
