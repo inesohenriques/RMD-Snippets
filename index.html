@@ -894,10 +894,12 @@
         const category = card.dataset.category.split(' ');
 
         const matchesSearch = title.includes(search);
-        const matchesFilter = filter === 'all' || category === filter;
+        const matchesFilter = 
+          filter === 'all' || 
+          categories.includes(filter);
 
         if (matchesSearch && matchesFilter) {
-          card.style.display = 'block';
+          card.style.display = '';
         } else {
           card.style.display = 'none';
         }
