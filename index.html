@@ -890,7 +890,8 @@
       const filter = filterSelect.value;
 
       cards.forEach(card => {
-        const title = card.querySelector('h3').textContent.toLowerCase();
+        const title = card.querySelector('h3').textContent.toLowerCase() || "";
+        const backText = card.quarySelector('.flip-card-back')?.textContent.toLowerCase() || "";
         const category = card.dataset.category.split(' ');
 
         const matchesSearch = title.includes(search);
