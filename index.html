@@ -880,36 +880,49 @@
   
   </section>
 
-  <script>
-    const searchInput = document.getElementById('search');
-    const filterSelect = document.getElementById('filter');
-    const cards = document.querySelectorAll('.card, .flip-card');
+<script>
+  const searchInput = document.getElementById('search');
+  const filterSelect = document.getElementById('filter');
+  const cards = document.querySelectorAll('.card, .flip-card');
 
-    function filterCards() {
-      const search = searchInput.value.toLowerCase();
-      const filter = filterSelect.value;
+  function filterCards() {
+    const search = searchInput.value.toLowerCase();
+    const filter = filterSelect.value;
 
-      cards.forEach(card => {
-        const title = card.querySelector('h3').textContent.toLowerCase() || "";
-        const backText = card.quarySelector('.flip-card-back')?.textContent.toLowerCase() || "";
-        const category = card.dataset.category.split(' ');
+    cards.forEach(card => {
+      const title =
+        card.querySelector('h3')?.textContent.toLowerCase() || "";
 
-        const matchesSearch = title.includes(search);
-        const matchesFilter = 
-          filter === 'all' || 
-          categories.includes(filter);
+      const backText =
+        card.querySelector('.flip-card-back')?.textContent.toLowerCase() || "";
 
-        if (matchesSearch && matchesFilter) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
+      const categories =
+        card.dataset.category
+          ?.split(';')
+          .map(c => c.trim()) || [];
 
-    searchInput.addEventListener('input', filterCards);
-    filterSelect.addEventListener('change', filterCards);
-  </script>
+      const matchesSearch =
+        title.includes(search) ||
+        backText.includes(search);
+
+      const matchesFilter =
+        filter === 'all' ||
+        categories.includes(filter);
+
+      card.style.display =
+        matchesSearch && matchesFilter
+          ? ''
+          : 'none';
+    });
+  }
+
+  // Run when typing or changing dropdown
+  searchInput.addEventListener('input', filterCards);
+  filterSelect.addEventListener('change', filterCards);
+
+  // Optional: run once on page load
+  filterCards();
+</script>
 
 </body>
 </html>
