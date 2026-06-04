@@ -128,6 +128,14 @@
 .flip-card-front {
   background: white;
 }
+
+.icon-group {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  gap: 8px;
+}
          
 .card-icon {
   position: absolute;
@@ -429,8 +437,10 @@
       <div class="number">SNIP0012</div>
       <h3>What repositories can I use for my data?</h3>
       <div class="open">Hover to learn more →</div>
-      <img src="icons/F.png" class="card-icon" alt="Findability Icon">
-       <img src="icons/R.png" class="card-icon" alt="Findability Icon">
+      <div class="icon-group">
+  <img src="icons/F.png" class="card-icon" alt="Findability">
+  <img src="icons/R.png" class="card-icon" alt="Reusable">
+</div>
     </div>
 
     <div class="flip-card-back">
